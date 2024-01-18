@@ -1,8 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
-import Section from "./components/Section";
-import Article from "./components/Article";
+import Products from "./components/Products";
 import Footer from "./components/Footer";
 
 function App() {
@@ -10,11 +9,7 @@ function App() {
     <>
       <Navbar />
       <Main />
-      <Section>
-        <Article></Article>
-        <Article></Article>
-        <Article></Article>
-      </Section>
+      <Products />
       <Footer />
     </>
   );

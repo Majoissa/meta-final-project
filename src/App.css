@@ -1,38 +1,324 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Navbar*/
+.hamburger-menu{
+  display: none;
+}
+.nav{
+  max-width: 75%;
+  margin: auto;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  color: black;
+  padding: 20px;
+  padding-bottom: 35px;
+}
+.navBar{
+  padding-left: 200px;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: -45px;
+}
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navBar a:hover{
+  color: #F4CE14;
+  transition: 0.2s ease-in-out;
+}
+
+
+.head{
+  position: relative;
+  left: 10%;
+  width: 220px;
+  margin-right: 20%;
+}
+.logo{
+  width: 220px;
+}
+/*main*/
+main{
+  background-color: #495E57;
+}
+.container{
+  max-width: 67%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  padding: 2vw 2vw 2vw 5vw ;
+}
+
+.fill h2{
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.fill p{
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  width: 20vw;
+}
+
+.image{
+width: 280px;
+height: 280px;
+object-fit: cover;
+border-radius: 16px;
+position: relative;
+top: 80px;
+float: right;
+}
+
+
+/*Cards*/
+.card{
+  width: 247px;
+  height: auto;
+  background-color: #EEDDFF;
+  margin-top: 25px;
+  margin-bottom: 200px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.cardImg{
+  width: 100%;
+  height: 192px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.card h3, .card h4, .card p{
+  margin: 15px;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.price{
+  color: #EE9972;
+}
+
+.orderDelivery{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 95%;
+  margin: auto;
+}
+
+.orderDelivery img{
+width: 30px;
+height: auto;
+object-fit: cover;
+margin: 15px;
+}
+
+/*Products section*/
+.titleArea{
+  max-width: 59%;
+  margin: auto;
+  padding: 5vw 0vw 2vw 0vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.products{
+  max-width: 67%;
+  margin: auto;
+  padding: 2vw 2vw 2vw 5vw ;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  column-gap: 5rem;
+}
+
+@media (max-width : 1400px){
+  .hamburger-menu{
+    display: block;
+    float: right;
+    margin-top: -40px;
+  }
+
+  .navBar{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 155px;
+    width: 100%;
+    z-index:9999;
+    background-color: #333333;
+  }
+
+  .navBar.show{
+    display: flex;
+  }
+
+  .navBar li{
+    text-align: right;
+    width: 100%;
+    padding: 25px 0;
+    padding-right: 14vw;
+  }
+
+  .navBar a {
+    color: white;
+  }
+
+  /*products*/
+  .products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /*Cards*/
+.card{
+  width: 350px;
+  margin-bottom: 50px;
+  height: 35vw;
+}
+
+
+}
+
+@media (max-width : 1300px){
+.card{
+  height: auto;
+  width: 70%;
+}
+
+.cardImg{
+  height: 25vw;
+}
+
+}
+@media (max-width : 1000px){
+  .card{
+    width: 70%;
+  }
+
+  .cardImg{
+    height: 35vw;
+  }
+  main{
+    height: auto;
+    padding: 2vw;
+  }
+  .titleArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .container{
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+
+.fill h2{
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #FFFFFF;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fill p{
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  width: auto;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.image{
+width: 40vw;
+height: 40vw;
+object-fit: cover;
+border-radius: 16px;
+position: relative;
+top: 15px;
+float: none;
   }
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 500px){
+  main{
+    height: auto;
+    padding: 2vw;
   }
-  to {
-    transform: rotate(360deg);
+  .titleArea{
+    max-width: 100%;
+    margin: 5px;
+  }
+  .container{
+    max-width: 100%;
+  }
+  
+
+.fill p{
+  width: 100%;
+}
+
+.image{
+width: 50vw;
+height: 50vw;
+  }
+  .card{
+    width: 100%;
+  }
+
+  .cardImg{
+    height: 50vw;
+  }
+  
+.image{
+  width: 60vw;
+  height: 60vw;
+}
+}
+
+@media (max-width: 700px){
+  .head{
+    left: 2%;
+    width: 200px;
+  }
+  .logo{
+    width: 200px;
+  }
+
+  .nav{
+    max-width: 100%;
   }
 }

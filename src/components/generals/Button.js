@@ -1,7 +1,8 @@
-function Button() {
+import "./Button.css";
+function Button({ text }) {
   return (
     <>
-      <button>Reserve a table</button>
+      <button className="btn">{text}</button>
     </>
   );
 }

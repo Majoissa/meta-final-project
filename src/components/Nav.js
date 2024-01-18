@@ -1,7 +1,17 @@
+import "../App.css";
+import { useState } from "react";
+import menu from "../images/🦆 icon _hamburger menu.svg";
 function Nav() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav>
-      <ul>
+      <div
+        className="hamburger-menu"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <img src={menu} alt="burger menu" />
+      </div>
+      <ul className={`navBar ${isMenuOpen ? "show" : ""}`}>
         <li>
           <a href="App.js">Home</a>
         </li>

@@ -1,11 +1,14 @@
 import Nav from "./Nav";
 import Header from "./Header";
+import "../App.css";
 
 function Navbar() {
   return (
     <>
-      <Header />
-      <Nav />
+      <div className="nav">
+        <Header />
+        <Nav />
+      </div>
     </>
   );
 }
