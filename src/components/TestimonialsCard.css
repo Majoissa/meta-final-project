@@ -1,0 +1,91 @@
+.starIcon{
+    color: gold;
+    font-size: 20px;
+}
+.testimonial-card{
+    width: 250px;
+    min-width: 250px;
+    display: grid;
+  grid-template-columns: 1fr;
+  background-color: #EEDDFF;
+  padding: 1em;
+  box-shadow: 0px 1px 5px black;
+  font-family: 'Karla', sans-serif;
+  color : #495E57;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  scroll-snap-align: start; 
+  margin-right: 10px; 
+}
+.testimonial-name{
+    color: black;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.cardElements{
+    max-width: 90%;
+    margin: auto;
+}
+.testimonial-image{
+    border-radius: 100%;
+    max-width: 100%;
+    margin: auto;
+    box-shadow: 0px 1px 5px black;
+}
+
+.testimonial-rating{
+    text-align: center;
+}
+
+.testimonials-container {
+    max-width: 60%; 
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Sección de testimonios con desplazamiento horizontal */
+  .testimonials-section {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    min-width: 100%;
+    overflow-x: scroll;
+  }
+
+  .testimonials-section::-webkit-scrollbar{
+    display: none;
+  }
+
+  .test-section{
+    background-color: #333333;
+    padding: 5vw 0;
+    position: relative;
+  }
+
+  .arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 35px;
+    color: white;
+    user-select: none; /*evita que el texto de la flecha sea seleccionable*/
+  }
+
+
+  .arrow:hover{
+    color: gold;
+  }
+
+  .fa-arrow-left{
+    left: 10vw;
+  }
+
+  .fa-arrow-right{
+    right: 10vw;
+  }

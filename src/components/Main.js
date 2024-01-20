@@ -2,6 +2,7 @@ import Button from "./generals/Button";
 import "../App.css";
 import food from "../images/restauranfood.jpg";
 import TitleText from "./generals/TitleText";
+import Images from "./generals/Images";
 function Main() {
   return (
     <>
@@ -17,7 +18,7 @@ function Main() {
             <Button text="Reserve a table" />
           </article>
           <article className="fill img">
-            <img className="image" src={food} alt="descriptive pic" />
+            <Images direction={food} description="Food little lemon" />
           </article>
         </section>
       </main>

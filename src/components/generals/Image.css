@@ -1,0 +1,6 @@
+.image-comp{
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 16px;
+    }

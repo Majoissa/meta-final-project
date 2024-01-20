@@ -2,7 +2,7 @@ import "./Button.css";
 function Button({ text }) {
   return (
     <>
-      <button className="btn">{text}</button>
+      <button className="buttonComp">{text}</button>
     </>
   );
 }
