@@ -8,7 +8,7 @@ import Button from "./generals/Button";
 function Products() {
   return (
     <>
-      <article className="titleArea">
+      <article className="titleArea" id="menu">
         <TitleText text="This week specials!" color="black" />
         <Button text="Online Menu" />
       </article>

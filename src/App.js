@@ -5,15 +5,18 @@ import Products from "./components/Products";
 import Footer from "./components/Footer";
 import TestimonialsSection from "./components/TestimonialsSection";
 import About from "./components/About";
+import { Fade } from "react-awesome-reveal";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Main />
-      <Products />
-      <TestimonialsSection />
-      <About />
+      <Fade cascade damping={0.2}>
+        <Main />
+        <Products />
+        <TestimonialsSection />
+        <About />
+      </Fade>
       <Footer />
     </>
   );

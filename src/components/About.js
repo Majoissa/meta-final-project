@@ -7,7 +7,7 @@ import pasta from "../images/pasta.jpg";
 const About = () => {
   return (
     <>
-      <section className="About-us">
+      <section className="About-us" id="about">
         <div className="info-container">
           <TitleText text="Little Lemon" color="#495E57" />
           <h2>Chicago</h2>

@@ -1,5 +1,6 @@
 import "../App.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import menu from "../images/🦆 icon _hamburger menu.svg";
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,16 +14,16 @@ function Nav() {
       </div>
       <ul className={`navBar ${isMenuOpen ? "show" : ""}`}>
         <li>
-          <a href="App.js">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="App.js">About</a>
+          <a href="#about">About</a>
         </li>
         <li>
-          <a href="App.js">Menu</a>
+          <a href="#menu">Menu</a>
         </li>
         <li>
-          <a href="App.js">Reservations</a>
+          <Link to="/BookingPage">Reservations</Link>
         </li>
         <li>
           <a href="App.js">Login</a>
