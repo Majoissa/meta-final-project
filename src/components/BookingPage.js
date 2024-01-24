@@ -1,9 +1,15 @@
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import BookingForm from "./BookingForm";
 
 const BookingPage = () => {
   return (
     <>
-      <BookingForm />
+      <Navbar />
+      <div className="reservSection">
+        <BookingForm />
+      </div>
+      <Footer />
     </>
   );
 };

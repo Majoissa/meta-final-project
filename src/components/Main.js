@@ -3,6 +3,7 @@ import "../App.css";
 import food from "../images/restauranfood.jpg";
 import TitleText from "./generals/TitleText";
 import Images from "./generals/Images";
+import { Link } from "react-router-dom";
 function Main() {
   return (
     <>
@@ -15,7 +16,9 @@ function Main() {
               We are family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
-            <Button text="Reserve a table" />
+            <Link to="/BookingPage">
+              <Button text="Reserve a table" />
+            </Link>
           </article>
           <article className="fill img">
             <Images direction={food} description="Food little lemon" />
