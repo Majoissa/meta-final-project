@@ -7,7 +7,12 @@ import { FaWineGlassAlt } from "react-icons/fa";
 import { useState } from "react";
 
 const BookingForm = () => {
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [date, setDate] = useState();
+  const [dateError, setDateError] = useState("");
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+
+  //obtain current date
+  const currentDate = new Date().toISOString().split("T")[0];
   const [availableTime, setAvailableTime] = useState([
     "17:00",
     "18:00",
@@ -16,22 +21,35 @@ const BookingForm = () => {
     "21:00",
     "22:00",
   ]);
-  const [selectedTime, setSelectedTime] = useState("");
+  const [selectedTime, setSelectedTime] = useState("17:00");
   const [guest, setGuest] = useState(1);
   const [availableOccasion, setAvailableOccasion] = useState([
     "Birthday",
     "Aniversary",
     "Engagement",
   ]);
-  const [selectedOccasion, setSelectedOccasion] = useState("");
+  const [selectedOccasion, setSelectedOccasion] = useState("Birthday");
 
   /*To handle the succesfull reserve message"*/
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [confirmationData, setConfirmationData] = useState({});
 
+  //VALIDATING DATE
+  const validateDate = (selectedDate) => {
+    if (selectedDate < currentDate) {
+      setDateError("Selected date cannot be in the past");
+      return false;
+    } else {
+      setDateError("");
+      return true;
+    }
+  };
+
   /*handle functions*/
   const handleChangeDate = (event) => {
-    setDate(event.target.value);
+    const selectedDate = event.target.value;
+    setDate(selectedDate);
+    setIsSubmitDisabled(!validateDate(selectedDate));
   };
 
   const handleTimeChange = (event) => {
@@ -85,6 +103,7 @@ const BookingForm = () => {
             id="res-date"
             value={date}
             onChange={handleChangeDate}
+            required
           />
           <label htmlFor="res-time">Choose time</label>
           <select
@@ -106,6 +125,7 @@ const BookingForm = () => {
             min={1}
             max={10}
             id="guests"
+            required
           />
           <label htmlFor="occasion">Occasion</label>
           <div className="select-with-icon">
@@ -123,7 +143,7 @@ const BookingForm = () => {
             </select>
           </div>
 
-          <Button text="Reserve" />
+          <Button text="Reserve" type="submit" disabled={isSubmitDisabled} />
         </form>
       ) : (
         <div className="reservation-confirmation">
@@ -135,7 +155,11 @@ const BookingForm = () => {
           <p>Occasion: {confirmationData.selectedOccasion}</p>
           <div className="imgbtn">
             <Images direction={restaurant} description="restaurant image" />
-            <Button text="Make a new reserve" onClick={handleReset} />
+            <Button
+              text="Make a new reserve"
+              onClick={handleReset}
+              aria-label="On Click"
+            />
           </div>
         </div>
       )}
