@@ -78,6 +78,7 @@ const BookingForm = () => {
     <>
       {!showConfirmation ? (
         <form className="reservationForm" onSubmit={handleSubmit}>
+          <TitleText text="Make a reserve!" color="gold" />
           <label htmlFor="res-date">Choose date</label>
           <input
             type="date"
